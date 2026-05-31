@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CiWeb — Desarrollo Web y Ciberseguridad</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:system-ui,sans-serif;color:#1a1a2e;background:#fff;}
+.nav{background:#0C447C;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;border-radius:0 0 24px 24px;}
+.nav-logo{color:#fff;font-size:24px;font-weight:600;letter-spacing:2px;}
+.nav-logo span{color:#85B7EB;}
+.nav-links{display:flex;gap:28px;}
+.nav-links a{color:#B5D4F4;font-size:14px;text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:#fff;}
+.hero{background:#042C53;color:#fff;padding:80px 40px 100px;text-align:center;position:relative;}
+.hero::after{content:'';display:block;position:absolute;bottom:-40px;left:0;right:0;height:80px;background:#fff;border-radius:50% 50% 0 0/80px 80px 0 0;}
+.hero-badge{display:inline-block;background:#185FA5;color:#B5D4F4;font-size:12px;padding:5px 16px;border-radius:20px;margin-bottom:20px;}
+.hero h1{font-size:36px;font-weight:600;margin-bottom:16px;line-height:1.4;}
+.hero p{font-size:16px;color:#85B7EB;max-width:520px;margin:0 auto 36px;line-height:1.8;}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:#378ADD;color:#fff;border:none;padding:14px 32px;border-radius:50px;font-size:15px;cursor:pointer;text-decoration:none;}
+.btn-primary:hover{background:#185FA5;}
+.btn-outline{background:transparent;color:#85B7EB;border:2px solid #378ADD;padding:14px 32px;border-radius:50px;font-size:15px;cursor:pointer;text-decoration:none;}
+.btn-outline:hover{background:#0C447C;}
+.carousel-wrap{padding:60px 40px 40px;}
+.section-label{font-size:12px;color:#378ADD;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.section-title{font-size:26px;font-weight:600;margin-bottom:32px;}
+.carousel{background:#E6F1FB;border-radius:24px;overflow:hidden;}
+.carousel-track{display:flex;transition:transform .5s ease;}
+.carousel-slide{min-width:100%;padding:44px 40px;}
+.carousel-slide i{font-size:40px;color:#378ADD;margin-bottom:16px;display:block;}
+.carousel-slide h4{font-size:20px;font-weight:600;color:#0C447C;margin-bottom:10px;}
+.carousel-slide p{font-size:15px;color:#185FA5;line-height:1.8;max-width:520px;}
+.carousel-dots{display:flex;justify-content:center;gap:8px;padding:18px;}
+.dot{width:8px;height:8px;border-radius:50%;background:#378ADD;opacity:.3;cursor:pointer;border:none;transition:opacity .2s,width .2s;}
+.dot.active{opacity:1;width:24px;border-radius:4px;}
+.section{padding:60px 40px;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+.service-card{background:#fff;border-radius:20px;padding:28px 20px;border:1px solid #e8f0fb;transition:border-color .2s,transform .2s;}
+.service-card:hover{border-color:#378ADD;transform:translateY(-4px);}
+.service-icon{width:48px;height:48px;border-radius:14px;background:#E6F1FB;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.service-icon i{font-size:24px;color:#185FA5;}
+.service-card h3{font-size:16px;font-weight:600;margin-bottom:8px;color:#0C447C;}
+.service-card p{font-size:14px;color:#555;line-height:1.6;}
+.contact-section{background:#E6F1FB;padding:60px 40px;border-radius:24px;margin:0 24px 48px;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:28px;}
+.contact-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.contact-icon{width:44px;height:44px;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.contact-icon i{font-size:22px;color:#185FA5;}
+.contact-item strong{font-size:15px;font-weight:600;display:block;color:#0C447C;margin-bottom:3px;}
+.contact-item p{font-size:14px;color:#185FA5;}
+.map-box{background:#fff;border-radius:20px;height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:1px solid #B5D4F4;}
+.map-box i{font-size:40px;color:#378ADD;}
+.map-box p{font-size:15px;color:#185FA5;font-weight:600;}
+.map-box span{font-size:13px;color:#378ADD;}
+.footer{background:#042C53;color:#85B7EB;text-align:center;padding:28px;border-radius:24px 24px 0 0;}
+.footer strong{color:#E6F1FB;}
+@media(max-width:600px){.nav-links{display:none;}.hero h1{font-size:26px;}.contact-grid{grid-template-columns:1fr;}.services-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <span class="nav-logo">Ci<span>Web</span></span>
+  <div class="nav-links">
+    <a href="#">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">Santa Fe, CDMX</div>
+  <h1>Tu aliado en desarrollo web<br>y ciberseguridad</h1>
+  <p>En CiWeb transformamos ideas en soluciones digitales seguras y modernas. Protegemos y potenciamos tu negocio.</p>
+  <div class="hero-btns">
+    <a href="#servicios" class="btn-primary">Ver servicios</a>
+    <a href="#contacto" class="btn-outline">Contáctanos</a>
+  </div>
+</div>
+
+<div class="carousel-wrap">
+  <p class="section-label">Por qué elegirnos</p>
+  <p class="section-title">Lo que nos hace diferentes</p>
+  <div class="carousel">
+    <div class="carousel-track" id="track">
+      <div class="carousel-slide">
+        <i class="ti ti-world"></i>
+        <h4>Desarrollo web profesional</h4>
+        <p>Creamos sitios y aplicaciones web modernas, rápidas y seguras, adaptadas exactamente a lo que tu negocio necesita.</p>
+      </div>
+      <div class="carousel-slide">
+        <i class="ti ti-shield-lock"></i>
+        <h4>Ciberseguridad empresarial</h4>
+        <p>Protegemos tu infraestructura digital con auditorías, pentesting y monitoreo continuo ante amenazas.</p>
+      </div>
+      <div class="carousel-slide">
+        <i class="ti ti-headset"></i>
+        <h4>Soporte técnico especializado</h4>
+        <p>Equipo dedicado para resolver incidentes, mantener tus sistemas operativos y optimizar tu red empresarial.</p>
+      </div>
+      <div class="carousel-slide">
+        <i class="ti ti-bulb"></i>
+        <h4>Consultoría tecnológica</h4>
+        <p>Te asesoramos en decisiones tecnológicas clave para que tu empresa siempre esté un paso adelante.</p>
+      </div>
+    </div>
+    <div class="carousel-dots" id="dots">
+      <button class="dot active" onclick="goTo(0)"></button>
+      <button class="dot" onclick="goTo(1)"></button>
+      <button class="dot" onclick="goTo(2)"></button>
+      <button class="dot" onclick="goTo(3)"></button>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="servicios">
+  <p class="section-label">Lo que hacemos</p>
+  <p class="section-title">Nuestros servicios</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon"><i class="ti ti-world"></i></div>
+      <h3>Desarrollo web</h3>
+      <p>Sitios corporativos, tiendas en línea y apps web con tecnologías modernas.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="ti ti-shield-lock"></i></div>
+      <h3>Ciberseguridad</h3>
+      <p>Auditorías, pentesting y protección de datos para tu empresa.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="ti ti-brush"></i></div>
+      <h3>Diseño UI/UX</h3>
+      <p>Interfaces intuitivas y atractivas que enamoran a tus usuarios.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="ti ti-server"></i></div>
+      <h3>Infraestructura</h3>
+      <p>Servidores, redes y sistemas en la nube siempre al día.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="ti ti-headset"></i></div>
+      <h3>Soporte técnico</h3>
+      <p>Atención rápida y especializada cuando más lo necesitas.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="ti ti-chart-bar"></i></div>
+      <h3>Consultoría tech</h3>
+      <p>Estrategia digital para impulsar el crecimiento de tu negocio.</p>
+    </div>
+  </div>
+</div>
+
+<div class="contact-section" id="contacto">
+  <p class="section-label">Estamos para ti</p>
+  <p class="section-title">Contáctanos</p>
+  <div class="contact-grid">
+    <div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="ti ti-mail"></i></div>
+        <div><strong>Correo electrónico</strong><p>contacto@ciweb.mx</p></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="ti ti-brand-whatsapp"></i></div>
+        <div><strong>WhatsApp</strong><p>+52 56 4817 9466</p></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="ti ti-map-pin"></i></div>
+        <div><strong>Ubicación</strong><p>Centro Santa Fe, Álvaro Obregón, CDMX</p></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="ti ti-clock"></i></div>
+        <div><strong>Horario</strong><p>Lunes a viernes, 9:00 — 18:00 hrs</p></div>
+      </div>
+    </div>
+    <div>
+      <div class="map-box">
+        <i class="ti ti-map-2"></i>
+        <p>Centro Santa Fe, CDMX</p>
+        <span>Álvaro Obregón, CP 01376</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <strong>CiWeb</strong> — Desarrollo web y ciberseguridad<br>
+  contacto@ciweb.mx &nbsp;|&nbsp; +52 56 4817 9466 &nbsp;|&nbsp; © 2025 Todos los derechos reservados
+</footer>
+
+<script>
+let current=0;
+const track=document.getElementById('track');
+const dots=document.querySelectorAll('.dot');
+function goTo(n){current=n;track.style.transform='translateX(-'+(n*100)+'%)';dots.forEach((d,i)=>d.classList.toggle('active',i===n));}
+setInterval(()=>goTo((current+1)%4),3500);
+</script>
+</body>
+</html>
